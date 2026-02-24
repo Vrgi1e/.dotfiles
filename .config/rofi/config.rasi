@@ -1,0 +1,119 @@
+configuration{
+	modes: [combi];
+	combi-modes: [window, drun, run];
+	
+}
+* {
+bg-darker: #1d2021;
+bg-dark: #282828;
+bg-light: #504945;
+fg: #ebdbb2;
+red: #cc241d;
+green: #98971a;
+yellow:#d79921;
+cyan: #689d6a;
+transparent: #00000000;
+
+input-padding: 3 5 2 5;
+
+}
+window {
+background-color: @bg-darker;
+border: 1px;
+border-color: @bg-light;
+padding: 5px;
+font: "JetBrains Mono 12";
+}
+mainbox{
+spacing : 0px;
+}
+inputbar{
+height: 3px;
+background-color: #00000000;
+text-color: @fg;
+vertical-align: 0.5;
+/*spacing : 4;*/
+padding: 0 0 5px 0;
+children: ["prompt","entry", "num-filtered-rows", "textbox-num-sep", "num-rows"];
+}
+entry {
+placeholder: " └ SELECT PROGRAM ┐";
+placeholder-color: @bg-light;
+vertical-align: inherit;
+cursor-color:  @fg;
+text-color: @fg;
+hide-cursor-on-empty: true;
+font: "CozetteCrossedSeven 8";
+padding: @input-padding;
+}
+prompt, text-prompt-colon{
+font: "CozetteCrossedSeven 8";
+background-color: @bg-light;
+text-color: inherit;
+padding : @input-padding;
+vertical-align : inherit;
+}
+num-rows, num-filtered-rows, textbox-num-sep{
+font: "CozetteCrossedSeven 8";
+padding: @input-padding;
+height: 3px;
+vertical-align: inherit;
+background-color:@bg-dark;
+text-color: @red;
+}
+
+scrollbar {
+handle-color: @bg-light;
+padding: 0 0 0 4;
+}
+
+
+listview {
+background-color: #00000000;
+spacing : 4px; 
+border: 0px;
+border-color: #FF0000;
+}
+element {
+spacing : 0;
+padding: 4;
+border : 0;
+orientation: horizontal;
+spacing: 26px;
+children: [element-icon, element-text];
+}
+element-text {
+vertical-align: 0.5;
+}
+element-icon {
+padding: 0 0 0 7;
+}
+message {
+background-color: @bg-light;
+border-color:@bg-light;
+border: 0;
+padding: 4px 4px 4px 4px;
+spacing: 0 0 5px 0;
+}
+textbox{
+font: "CozetteCrossedSeven 8";
+text-color:@bg-darker;
+}
+element normal.normal, element alternate.normal{
+background-color: @transparent;
+text-color: @fg;
+}
+/*element selected.normal{
+background-color: @transparent;
+text-color: @bg-darker;
+expand:false;
+}*/
+element selected.normal{
+background-color: @cyan;
+text-color: @bg-darker;
+expand:false;
+}
+separator {
+    enabled: false;
+}
+
